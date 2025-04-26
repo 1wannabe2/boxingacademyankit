@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Price</title>
+  <link rel="stylesheet" href="ankit.css"> <!-- if you want same styling -->
+</head>
+<body>
+  <header>
+    <h1>Course Details</h1>
+  </header>
+  <h2>Thank You for Registering!</h2>
+  <p>We're excited to have you join <strong>Iron Fist Boxing Academy</strong>.</p>
+  
+  <p>Your journey towards strength, discipline, and confidence starts now. Below are your course details:</p>
+  
+  <ul>
+    <li><strong>Course Duration:</strong> <span id="courseName"></span></li>
+    <li><strong>Total Price:</strong> <span id="coursePrice"></span></li>
+  </ul>
+  
+  <p>Our team will contact you shortly with further information. Be prepared to train like a champion! 🥊</p>
+  
+  <a href="project.html" style="display:inline-block; margin-top: 20px; padding: 10px 20px; background: #333;
+   color: white; text-decoration: none; border-radius: 5px;">Return to Home</a>
+  
+  <main>
+    <p id="courseName"></p>
+    <p id="coursePrice"></p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const course = params.get("course");
+    const price = params.get("price");
+
+    let courseNameText = "";
+
+    if (course === "onemonth") {
+      courseNameText = "1 Month Course";
+    } else if (course === "sixmonth") {
+      courseNameText = "6 Months Course";
+    } else if (course === "oneyear") {
+      courseNameText = "1 Year Course";
+    } else {
+      courseNameText = "Unknown Course";
+    }
+
+    document.getElementById("courseName").textContent = `You selected: ${courseNameText}`;
+    document.getElementById("coursePrice").textContent = `Total Price: ${price}`;
+  </script>
+
+
+  <br>  <div id="image">
+  <h5> FOR ONLINE PAYMENT :</h5>
+<a href="https://esewa.com.np/" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Esewa_logo.webp" alt="esewa" width="50px"height="50px"> 
+  </a>
+  <a href="https://www.khalti.com/" target="_blank">
+  <img src="https://encdn.ratopati.com/media/news/khalti_ELEhMcPi9q_8KQHgO7gag.png" alt="esewa" width="100px"height="100px"> 
+  </a>
+
+</div>
+
+
+    <footer>
+        <p>&copy; 2025 All rights reserved to Ankit Pokharel.</p>
+        <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        </div>
+        </footer>
+</body>
+</html>

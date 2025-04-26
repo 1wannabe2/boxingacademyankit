@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="ankit.css">
+</head>
+<body>
+  <header>
+    <h1>Admission Form</h1>
+  </header>
+  <br>
+  <form action="#" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required> <br> <br>
+    
+    <label for="address"> Address : </label>
+    <input type="text" id="address" name="address" placeholder="Enter your Address" required><br> <br>
+   
+    <label for="age"> Age :</label>
+    <input type="text" id="age" name="age" placeholder="Enter your age" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email " required><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone"  placeholder="Enter your Phone no."><br><br>
+
+    <label for="date"> Date of joining:</label>
+    <input type="text" id="date" name="date"  placeholder="(format:YYYY/MM/DD)"><br><br>
+
+
+    <label for="course">Select Course:</label>
+    <select id="course" name="course" required>
+      <option value="onemonth">1 month</option>
+      <option value="sixmonth">6 months</option>
+      <option value="oneyear">1 year</option>
+    </select><br><br>
+ <input type="submit" value="Submit">
+  </form>
+
+
+  <footer>
+    <p>Follow us:</p>
+<div class="social-links">
+    <a href="https://www.facebook.com" target="_blank" style="display: block;">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank" style="display: block;">Instagram</a>
+    <a href="https://www.twitter.com" target="_blank" style="display: block;">Twitter</a>
+</div>    
+</footer>
+</body>
+
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const course = document.getElementById('course').value;
+      let price = '';
+      if (course === 'onemonth') {
+        price = 'Rs.1000';
+      } else if (course === 'sixmonth') {
+        price = 'Rs.5000';
+      } else if (course === 'oneyear') {
+        price = 'Rs.9000';
+      }
+      window.location.href = `price.html?course=${course}&price=${price}`;
+    });
+  </script>
+</html>
